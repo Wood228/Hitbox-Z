@@ -9,9 +9,8 @@ import net.minecraft.text.Text;
 
 public final class HitboxConfigScreen extends Screen {
     private static final int PANEL_WIDTH = 420;
-    private static final int PANEL_HEIGHT = 360;
+    private static final int PANEL_HEIGHT = 400;
     private static final int BLUE = 0xFF2F80ED;
-    private static final int LIGHT_BLUE = 0xFFEAF4FF;
     private static final int PANEL = 0xFFF8FBFF;
     private static final int TEXT = 0xFF18324B;
     private static final int MUTED = 0xFF6D8295;
@@ -61,7 +60,9 @@ public final class HitboxConfigScreen extends Screen {
             @Override
             protected void updateMessage() {
                 double value = denormalize(this.value, min, max);
-                String formatted = format.equals("%d") ? String.format("%d", Math.round(value)) : String.format(format, value);
+                String formatted = format.equals("%d")
+                        ? String.format("%d", Math.round(value))
+                        : String.format(format, value);
                 setMessage(Text.literal(label + ": " + formatted));
             }
 
