@@ -1,6 +1,5 @@
 {
   "key.category.hitboxz": "Hitbox-Z",
   "key.hitboxz.toggle": "Toggle hitboxes",
-  "key.hitboxz.settings": "Open Hitbox-Z settings",
-  "key.hitboxz.hud": "Open HUD editor"
+  "key.hitboxz.settings": "Open Hitbox-Z settings"
 }
