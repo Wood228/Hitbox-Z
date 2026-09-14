@@ -2,6 +2,8 @@ package com.wood228.hitboxz;
 
 import com.wood228.hitboxz.config.HitboxConfig;
 import com.wood228.hitboxz.gui.HitboxConfigScreen;
+import com.wood228.hitboxz.hud.HitboxHud;
+import com.wood228.hitboxz.hud.HitboxHudConfig;
 import com.wood228.hitboxz.hud.HitboxHudEditorScreen;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -15,10 +17,17 @@ public final class HitboxZKeys {
     private static KeyBinding toggleKey;
     private static KeyBinding settingsKey;
     private static KeyBinding hudKey;
+    private static boolean hudRegistered;
 
     private HitboxZKeys() {}
 
     public static void register() {
+        HitboxHudConfig.load();
+        if (!hudRegistered) {
+            HitboxHud.register();
+            hudRegistered = true;
+        }
+
         toggleKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.hitboxz.toggle", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_F6, CATEGORY));
         settingsKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.hitboxz.settings", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_RIGHT_SHIFT, CATEGORY));
         hudKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.hitboxz.hud", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_F7, CATEGORY));
