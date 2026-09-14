@@ -1,5 +1,6 @@
 package com.wood228.hitboxz;
 
+import com.wood228.hitboxz.render.HitboxRenderer;
 import net.fabricmc.api.ClientModInitializer;
 
 public final class HitboxZClient implements ClientModInitializer {
@@ -7,6 +8,6 @@ public final class HitboxZClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        // Client initialization will be added as the hitbox system is implemented.
+        HitboxRenderer.register();
     }
 }
