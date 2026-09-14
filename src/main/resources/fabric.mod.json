@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "hitboxz",
+  "version": "${version}",
+  "name": "Hitbox-Z",
+  "description": "Client-side PvP hitbox customization tools for Minecraft 1.21.4.",
+  "authors": [
+    "Wood228"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.wood228.hitboxz.HitboxZClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
